@@ -8,7 +8,7 @@ class Box
     public:
     friend void printWidth( Box box );
     friend class Collections;         // all members of class Collections will be friends of Box; so they can access private member of Box.
-    void setWidth( double wid );
+    void setWidth( double wid ); // constructor
 };
 
 // Member function definition

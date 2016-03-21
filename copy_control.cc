@@ -1,3 +1,11 @@
+// ??
+// 1. reference or pointer
+// 2. len is a member or not
+// 3. how to copy an object
+// 4. how to initialize an object
+//    1) assign to member directly
+//    2) setvalue function
+//    3) copy operation  
 #include <iostream>
 
 using namespace std;
@@ -7,13 +15,19 @@ class Line
 	public:
 		int getLength( void );
 		Line( int len );             // simple constructor
-		Line( const Line &obj);  // copy constructor
+		//Line(){};             // default constructor
+		Line( const Line &obj);  // copy constructor ??? why it is & not *, means reference?
 		~Line();                     // destructor
 
 	private:
 		int *ptr;
 };
 
+/*
+Line( const Line &obj ){
+    ptr = obj.len;
+}
+*/
 // Member functions definitions including constructor
 Line::Line(int len)
 {
@@ -49,8 +63,10 @@ void display(Line obj)
 int main( )
 {
 	Line line(10);
+    Line line2 = line;
 
 	display(line);
+	display(line2);
 
 	return 0;
 }
