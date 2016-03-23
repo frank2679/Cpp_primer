@@ -12,6 +12,7 @@ using namespace std;
 
 class Line
 {
+		int *ptr;
 	public:
 		int getLength( void );
 		Line( int len );             // simple constructor
@@ -19,15 +20,8 @@ class Line
 		Line( const Line &obj);  // copy constructor ??? why it is & not *, means reference?
 		~Line();                     // destructor
 
-	private:
-		int *ptr;
 };
 
-/*
-Line( const Line &obj ){
-    ptr = obj.len;
-}
-*/
 // Member functions definitions including constructor
 Line::Line(int len)
 {
@@ -54,7 +48,7 @@ int Line::getLength( void )
 	return *ptr;
 }
 
-void display(Line obj)
+void display(class Line obj) // ??? why no "class"
 {
 	cout << "Length of line : " << obj.getLength() <<endl;
 }
